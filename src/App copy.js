@@ -1,4 +1,11 @@
-//Kazda zmiana w stanie komponentu, wlacza funkcje od nowa!!!
+// //Debbuging
+// //* w miejsce gdzie normalnie wstawialibysmy console.log wstawiamy breakpointy
+// *breakpoint zatrzymuje kod gdy js na niego trafi
+// * pauza daje nam komunikat ze funkcja dziala i zostala wywyolana
+// *debbuger sprawdza wartosc argumentu
+
+// 1.Wpisujemy w kodzie slowo : debbuger
+// //Kazda zmiana w stanie komponentu, wlacza funkcje od nowa!!!
 
 import React from 'react';
 import BookForm from './Components/BookForm/BookForm';
@@ -20,8 +27,6 @@ const App = () => {
       ...books,
       { id: shortid(), title: newBook.title, author: newBook.author },
     ]);
-    console.log('addBook');
-    console.log('newBook param:', newBook);
   };
   return (
     <div className='App'>
