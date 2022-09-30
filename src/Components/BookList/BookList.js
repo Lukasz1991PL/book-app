@@ -1,7 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const BookList = () => {
-  const books = useSelector(state => state.books);
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  const removeBook = (bookId) => {
+    dispatch({ type: 'REMOVE_BOOK', payload: bookId });
+  };
   return (
     <ul>
       {books.map((book) => (
