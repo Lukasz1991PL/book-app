@@ -6,28 +6,11 @@ import BookList from './Components/BookList/BookList';
 import { useState } from 'react';
 import shortid from 'shortid';
 const App = () => {
-  console.log('App refreshed ');
-  const [books, setBooks] = useState([
-    { id: 1, title: 'Man', author: 'John ' },
-    { id: 2, title: 'Women', author: 'Ann' },
-  ]);
-
-  const removeBook = (bookId) => {
-    setBooks(books.filter((book) => book.id !== bookId));
-  };
-  const addBook = (newBook) => {
-    setBooks([
-      ...books,
-      { id: shortid(), title: newBook.title, author: newBook.author },
-    ]);
-    console.log('addBook');
-    console.log('newBook param:', newBook);
-  };
   return (
     <div className='App'>
       <h1>Book App</h1>
-      <BookList books={books} removeBook={removeBook} />
-      <BookForm addBook={addBook} />
+      <BookList />
+      <BookForm />
     </div>
   );
 };

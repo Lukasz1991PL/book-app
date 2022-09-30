@@ -1,4 +1,7 @@
-const BookList = ({ books, removeBook }) => {
+import { useSelector } from 'react-redux';
+
+const BookList = () => {
+  const books = useSelector(state => state.books);
   return (
     <ul>
       {books.map((book) => (
